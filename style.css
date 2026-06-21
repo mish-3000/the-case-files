@@ -1,0 +1,430 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+
+
+:root {
+    --shadow-color: 30 20 10;
+ }
+  ::-webkit-scrollbar {
+    display: none;
+}
+  body{
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(/assets/covers/board.jpg);
+    background-size: cover;
+   background-attachment: fixed;
+    position: relative;
+
+    }
+  
+    
+
+
+
+  .intro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.introtext1{
+    font-size: 3.2rem;
+    padding-bottom: 8px;   
+}
+
+
+.introtext2{
+    font-size: 1.28rem; animation: fade 2.3s linear 2s 1 forwards;  opacity: 0; animation-fill-mode: forwards;
+}
+
+.introtext{ 
+   
+font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+   color: #6c0505;
+   white-space: nowrap; 
+}   
+
+@keyframes flicker {
+ 0%   { opacity: 0; }
+  15%  { opacity: 0.3; }
+  30%  { opacity: 0; }
+  50%  { opacity: 0.6; }
+  65%  { opacity: 0; }
+  80%  { opacity: 0.6; }
+  90%  { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translateY(17px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.flicker {
+  animation: flicker 4s linear 1 forwards;
+}
+
+
+.fadeout {
+  animation: fadeout 1s linear 1 forwards;
+}
+
+
+
+.card{
+    width: 8rem;
+    height: 10.6rem;
+    padding: 0.5rem 0.5rem 1.5rem 0.5rem;
+    opacity: 0.8;
+
+    
+}
+.card-div{
+   box-shadow: 
+   
+    
+   -1px 1px 1.2px hsl(var(--shadow-color) / 1),
+    -25px 25px 30.2px -4.3px hsl(var(--shadow-color) / 1);
+   display: inline-block;
+   background-color: rgba(193, 185, 163, 1);
+  position: absolute;
+  transition: transform 0.3s ease;
+  z-index: 5;
+  
+}
+
+.god{display: none; height: 100vh; width: 100vw; animation: fadeout 2s linear 1s 1 reverse ; overflow: auto; position: fixed;}
+.sib{transform-origin: 96% 5%;
+    transform: rotate(-15deg);
+    top: 14.3vh;
+    left: 4vw;}
+.card-div:hover {
+  transform: scale(1.1) ;
+  
+  cursor: pointer;
+
+}
+.eh{ top: 8.7vh; left: 38.3vw; }
+.fb{ top: 4.3vh; left: 64.3vw; transform: rotate(10deg); transform-origin: top left;}
+.hb{ top: 30.7vh; right: 5vw; transform: rotate(5deg); transform-origin: 20% 5%;}
+.rl{ top: 15.3vh;  transform: rotate(-4deg); right: -15vw; transform-origin: 60% 3%;}
+.sf{ top: 45.5vh; left: 23vw;}
+.sn{ top: 41.2vh; left: 53.6vw; transform: rotate(5deg); transform-origin: 5% 5%;}
+.sp{ top: 75.3vh; left: 74.2vw; transform: rotate(-5deg); transform-origin: 55% 5%;}
+.ss{ top: 78vh; left: 3.8vw; transform: rotate(3deg); transform-origin: 5% 5%;}
+.vf{ top: 84.5vh; left: 33.6vw;}
+
+.notes{
+    width: 15rem;
+    height: 14rem;
+
+    opacity: 0.8;
+    filter: drop-shadow(6px 12px 5px rgba(50, 50, 50, 0.8));
+ transition: transform 0.3s ease;
+}
+.notes:hover{
+   transform: scale(1.1) ;
+  
+  cursor: pointer;
+   
+}
+.pushpin{
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    z-index: 7;
+    pointer-events: none;
+    filter: drop-shadow(6px 12px 5px rgba(10, 10, 10, 0.8));
+}
+.pushpin1{
+    top: 11.3vh;
+    left: 10vw;
+    
+    position: absolute;
+    
+}
+.pushpin2{
+    top: 5.7vh;
+    left: 43.3vw;
+    position: absolute;
+}
+.pushpin3{
+    top: 1.3vh;
+    left: 64.3vw;
+    position: absolute;
+}
+.pushpin4{
+    top: 27.7vh;
+    right: 7vw;
+    position: absolute;
+}
+.pushpin5{
+    top: 11.3vh;  right: -15vw;
+    
+    position: absolute;
+}
+.pushpin6{
+    top: 41.5vh; left: 27vw;
+    position: absolute;
+}
+.pushpin7{
+    top: 37.2vh; left: 53.6vw;
+    position: absolute;
+}
+.pushpin8{
+    top: 71.3vh; left: 79.2vw;
+    position: absolute;
+}
+.pushpin9{
+    top: 74vh; left: 3.8vw;
+    position: absolute;
+}
+.pushpin10{
+    top: 80.5vh; left: 37.6vw;
+    position: absolute;
+}
+.notesdiv{
+    position: absolute;
+    display: inline-block;
+    top: 65vh;
+    right: -16vw;
+}
+.none{
+   position: absolute;
+    top: 63vh;
+    right: -22vw;
+    width: 6rem;
+    height: 9rem;
+
+}
+.pushpin11{
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+     width: 5rem;
+    height: 5rem;
+    position: absolute;
+    z-index: 1;
+}
+.card-title {
+    position: absolute;
+    bottom: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    font-size: 1.5rem;
+    color: #f5f0e1;
+    white-space: nowrap;
+    text-align: center;
+    font-family: "IM Fell English", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+.svgcanvas{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 6;
+}
+
+.none1{
+   position: absolute;
+    top: 92.5vh; left: 33.6vw;
+    width: 13rem;
+    height: 12rem;
+
+}
+.cardclicked{
+    animation: click 0.5s linear 1 forwards;
+    transform-origin: center !important;
+    z-index: 1000 ;
+   
+}
+@keyframes click {
+  0% {
+    transform: scale(1.01);
+  
+
+  }
+  100% {
+    
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -40%) scale(3) ;
+    
+  }
+}
+
+
+.darksheet{
+    position: fixed;
+   
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    display: none;
+}
+
+.scaledhover {
+    box-shadow: #6783f3 0px 0px 8px 1px;
+}
+
+
+
+
+.bookeh, .bookfp, .bookhb, .bookrl, .booksb, .booksf, .booksn, .bookband, .bookss, .bookvf{
+    position: fixed !important;
+    
+    width: 100vw !important;
+    height: 100vh;
+    background-color: #000000;
+   top: -9999px; 
+  z-index: 950;
+}
+.page{
+   
+    
+    width: 50vw;
+    height: 100vh !important;
+    border: 1px solid #c8b89a;
+    
+    padding: 3.75em 4.375em;
+    line-height: 1.9;
+    letter-spacing: 0.02em;
+    font-size: 1em;
+    text-align: justify;
+    background-color: #f0e6d2;
+     font-family: "IM Fell English", serif;
+     
+    
+}
+
+.blacksheet{display: none; height: 100vh; width: 100vw; animation: fadeinblack 2s linear 1 forwards; background-color: rgba(0, 0, 0, 1); z-index: 990;}
+
+@keyframes fadeinblack {
+    0% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0;
+    }}
+
+
+
+    .cpage{ width: 50vw;
+    height: 100vh !important;
+    border: 1px solid #c8b89a;
+    
+    padding: 0 !important;
+    line-height: 1.9;
+    letter-spacing: 0.02em;
+    font-size: 1em;
+    text-align: justify;
+    background-color: #f0e6d2;
+     font-family: "IM Fell English", serif;
+     
+
+    }
+    .cord{
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 1001;
+        width: 6rem;
+        height: 12rem;
+        animation:pendulum 3s linear infinite;
+        transform-origin: top center;
+        display: none;
+        
+    }
+    @keyframes pendulum {
+        0% { transform: rotate(0deg); }
+        25% { transform: rotate(9deg); }
+        50% { transform: rotate(0deg); }
+        75% { transform: rotate(-9deg); }
+        100% { transform: rotate(0deg); }
+    }
+    .cordpulled{
+        animation: pullcord 0.7s linear 1 forwards;
+    }
+    @keyframes pullcord {
+       0%{width: 6rem; height: 12rem;}
+       50%{width: 6rem; height: 14rem;}
+         100%{width: 6rem; height: 12rem;}
+    }
+.night{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(13, 23, 78, 0.3);
+    z-index: 10000;
+    display: none;
+    pointer-events: none;
+    
+}
+.light{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+background: radial-gradient(
+  ellipse farthest-corner at 92% 8%,
+  rgba(255, 210, 140, 0.06) 0%,
+  rgba(255, 190, 120, 0.06) 60%,
+  rgba(20, 16, 12, 0.08) 75%,
+  rgba(10, 8, 16, 0.12) 100%
+);
+    z-index: 10006;
+    display: none;
+    pointer-events: none;
+}
+
