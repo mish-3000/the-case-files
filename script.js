@@ -177,22 +177,13 @@ let vftext = [];
 
 
 
+const book=[];
+carddiv.forEach((card, index) => {var bookdiv = document.createElement("div");
+bookdiv.classList.add("book");
+document.body.appendChild(bookdiv);
+book.push(bookdiv);
+});
 
-
-
-
-
-
-var bookeh = document.querySelector(".bookeh");
-var bookfp = document.querySelector(".bookfp");
-var bookhb = document.querySelector(".bookhb");
-var bookrl = document.querySelector(".bookrl");
-var booksb = document.querySelector(".booksb");
-var booksf = document.querySelector(".booksf");
-var booksn = document.querySelector(".booksn");
-var bookband = document.querySelector(".bookband");
-var bookss = document.querySelector(".bookss");
-var bookvf = document.querySelector(".bookvf");
 
 
 
@@ -236,7 +227,7 @@ fetch("/assets/stories/emptyhouse.txt")
         pageEH.classList.add("page");
    pageEH.dataset.density = "soft";
         pageEH.textContent=emptyhousetext.slice(pagestartEH, index).join(" ");
-        bookeh.appendChild(pageEH);
+        book[1].appendChild(pageEH);
         lengthEH=0;
         pagestartEH=index;
     }
@@ -247,40 +238,40 @@ if (pagestartEH < emptyhousetext.length) {
     pageEH.classList.add("page");
     pageEH.dataset.density = "soft";
     pageEH.textContent = emptyhousetext.slice(pagestartEH).join(" ");
-    bookeh.appendChild(pageEH);
+    book[1].appendChild(pageEH);
 }
 let coverPage = document.createElement("div");
 coverPage.classList.add("cpage");
 coverPage.dataset.density = "hard";
 coverPage.appendChild(image[1]);
-bookeh.insertBefore(coverPage, bookeh.firstChild);
+book[1].insertBefore(coverPage, book[1].firstChild);
 let coverPage2 = document.createElement("div");
 coverPage2.classList.add("cpage");
 coverPage2.dataset.density = "hard";
-bookeh.insertBefore(coverPage2, bookeh.children[1]);
+book[1].insertBefore(coverPage2, book[1].children[1]);
 let backCover = document.createElement("div");
 backCover.classList.add("cpage");
 backCover.dataset.density = "hard";
 backCover.appendChild(image1[1]);
-bookeh.appendChild(backCover);
+book[1].appendChild(backCover);
 let backCover2 = document.createElement("div");
 backCover2.classList.add("cpage");
 backCover2.dataset.density = "soft";
-bookeh.insertBefore(backCover2, bookeh.lastChild);
+book[1].insertBefore(backCover2, book[1].lastChild);
 let backCover3 = document.createElement("div");
 backCover3.classList.add("cpage");
 backCover3.dataset.density = "hard";
-bookeh.insertBefore(backCover3, bookeh.children[bookeh.children.length-1]);
+book[1].insertBefore(backCover3, book[1].children[book[1].children.length-1]);
 
 
-const pageflipEH = new St.PageFlip(document.querySelector(".bookeh"), {
+const pageflipEH = new St.PageFlip(book[1], {
     showCover: true,
     width: window.innerWidth*0.5,
-height: window.innerHeight,
+height: window.innerHeight, 
 size: "stretch",
 minHeight: window.innerHeight,
 });
-pageflipEH.loadFromHTML(bookeh.querySelectorAll(".page, .cpage"));
+pageflipEH.loadFromHTML(book[1].querySelectorAll(".page, .cpage"));
 });
 
 
@@ -304,7 +295,7 @@ fetch("/assets/stories/finalproblem.txt")
         pageFP.classList.add("page");
    pageFP.dataset.density = "soft";
         pageFP.textContent=finalproblemtext.slice(pagestartFP, index).join(" ");
-        bookfp.appendChild(pageFP);
+        book[2].appendChild(pageFP);
         lengthFP=0;
         pagestartFP=index;
     }
@@ -315,34 +306,34 @@ if (pagestartFP < finalproblemtext.length) {
     pageFP.classList.add("page");
     pageFP.dataset.density = "soft";
     pageFP.textContent = finalproblemtext.slice(pagestartFP).join(" ");
-    bookfp.appendChild(pageFP);
+    book[2].appendChild(pageFP);
 }
 let coverPageFP = document.createElement("div");
 coverPageFP.classList.add("cpage");
 coverPageFP.dataset.density = "hard";
 coverPageFP.appendChild(image[2]);
-bookfp.insertBefore(coverPageFP, bookfp.firstChild);
+book[2].insertBefore(coverPageFP, book[2].firstChild);
 let coverPageFP2 = document.createElement("div");
 coverPageFP2.classList.add("cpage");
 coverPageFP2.dataset.density = "hard";
-bookfp.insertBefore(coverPageFP2, bookfp.children[1]);
+book[2].insertBefore(coverPageFP2, book[2].children[1]);
 let backCoverFP = document.createElement("div");
 backCoverFP.classList.add("cpage");
 backCoverFP.dataset.density = "hard";
 backCoverFP.appendChild(image1[2]); 
-bookfp.appendChild(backCoverFP);
+book[2].appendChild(backCoverFP);
 let backCoverFP1 = document.createElement("div");
 backCoverFP1.classList.add("cpage");
 backCoverFP1.dataset.density = "soft";
-bookfp.insertBefore(backCoverFP1, bookfp.lastChild);
-const pageflipFP = new St.PageFlip(document.querySelector(".bookfp"), {
+book[2].insertBefore(backCoverFP1, book[2].lastChild);
+const pageflipFP = new St.PageFlip(book[2], {
     showCover: true,
     width: window.innerWidth*0.5,
 height: window.innerHeight,
 size: "stretch",
 minHeight: window.innerHeight,
 });
-pageflipFP.loadFromHTML(bookfp.querySelectorAll(".page, .cpage"));
+pageflipFP.loadFromHTML(book[2].querySelectorAll(".page, .cpage"));
 });
 
 
@@ -366,7 +357,7 @@ fetch("/assets/stories/houndofbaskervilles.txt")
         pageHB.classList.add("page");
    pageHB.dataset.density = "soft";
         pageHB.textContent=houndofbaskervillestext.slice(pagestartHB, index).join(" ");
-        bookhb.appendChild(pageHB);
+        book[3].appendChild(pageHB);
         lengthHB=0;
         pagestartHB=index;
     }
@@ -377,37 +368,37 @@ if (pagestartHB < houndofbaskervillestext.length) {
     pageHB.classList.add("page");
     pageHB.dataset.density = "soft";
     pageHB.textContent = houndofbaskervillestext.slice(pagestartHB).join(" ");
-    bookhb.appendChild(pageHB);
+    book[3].appendChild(pageHB);
 }
 let coverPageHB = document.createElement("div");
 coverPageHB.classList.add("cpage");
 coverPageHB.appendChild(image[3]);
 coverPageHB.dataset.density = "hard";
-bookhb.insertBefore(coverPageHB, bookhb.firstChild);
+book[3].insertBefore(coverPageHB, book[3].firstChild);
 let coverPageHB1 = document.createElement("div");
 coverPageHB1.classList.add("cpage");
 coverPageHB1.dataset.density = "hard";
-bookhb.insertBefore(coverPageHB1, bookhb.children[1]);
+book[3].insertBefore(coverPageHB1, book[3].children[1]);
 let backCoverHB = document.createElement("div");
 backCoverHB.classList.add("cpage");
 backCoverHB.appendChild(image1[3]);
 backCoverHB.dataset.density = "hard";
-bookhb.appendChild(backCoverHB);
+book[3].appendChild(backCoverHB);
 let backCoverHB1 = document.createElement("div");
 backCoverHB1.classList.add("cpage");
-bookhb.insertBefore(backCoverHB1, bookhb.lastChild);
+book[3].insertBefore(backCoverHB1, book[3].lastChild);
 let backCoverHB2 = document.createElement("div");
 backCoverHB2.classList.add("cpage");
-bookhb.insertBefore(backCoverHB2, bookhb.children[bookhb.children.length-1]);
+book[3].insertBefore(backCoverHB2, book[3].children[book[3].children.length-1]);
 
-const pageflipHB = new St.PageFlip(document.querySelector(".bookhb"), {
+const pageflipHB = new St.PageFlip(book[3], {
     showCover: true,
     width: window.innerWidth*0.5,
 height: window.innerHeight,
 size: "stretch",
 minHeight: window.innerHeight,
 });
-pageflipHB.loadFromHTML(bookhb.querySelectorAll(".page, .cpage"));
+pageflipHB.loadFromHTML(book[3].querySelectorAll(".page, .cpage"));
 });
 
 
@@ -432,7 +423,7 @@ fetch("/assets/stories/red-headedleague.txt")
         pageRL.classList.add("page");
    pageRL.dataset.density = "soft";
         pageRL.textContent=redtext.slice(pagestartRL, index).join(" ");
-        bookrl.appendChild(pageRL);
+        book[4].appendChild(pageRL);
         lengthRL=0;
         pagestartRL=index;
     }
@@ -443,34 +434,34 @@ if (pagestartRL < redtext.length) {
     pageRL.classList.add("page");
     pageRL.dataset.density = "soft";
     pageRL.textContent = redtext.slice(pagestartRL).join(" ");
-    bookrl.appendChild(pageRL);
+    book[4].appendChild(pageRL);
 }
 let coverPageRL = document.createElement("div");
 coverPageRL.classList.add("cpage");
 coverPageRL.appendChild(image[4]);
 coverPageRL.dataset.density = "hard";
-bookrl.insertBefore(coverPageRL, bookrl.firstChild);
+book[4].insertBefore(coverPageRL, book[4].firstChild);
 let coverPageRL1 = document.createElement("div");
 coverPageRL1.classList.add("cpage");
 coverPageRL1.dataset.density = "hard";
-bookrl.insertBefore(coverPageRL1, bookrl.children[1]);
+book[4].insertBefore(coverPageRL1, book[4].children[1]);
 let backCoverRL = document.createElement("div");
 backCoverRL.classList.add("cpage");
 backCoverRL.dataset.density = "hard";
 backCoverRL.appendChild(image1[4]);
-bookrl.appendChild(backCoverRL);
+book[4].appendChild(backCoverRL);
 let backCoverRL1 = document.createElement("div");
 backCoverRL1.classList.add("cpage");
-bookrl.insertBefore(backCoverRL1, bookrl.lastChild);
+book[4].insertBefore(backCoverRL1, book[4].lastChild);
 
-const pageflipRL = new St.PageFlip(document.querySelector(".bookrl"), {
+const pageflipRL = new St.PageFlip(book[4], {
     showCover: true,
     width: window.innerWidth*0.5,
 height: window.innerHeight,
 size: "stretch",
 minHeight: window.innerHeight,
 });
-pageflipRL.loadFromHTML(bookrl.querySelectorAll(".page, .cpage"));
+pageflipRL.loadFromHTML(book[4].querySelectorAll(".page, .cpage"));
 });
 
 
@@ -496,7 +487,7 @@ fetch("/assets/stories/scandalinbohemia.txt")
         pageSB.classList.add("page");
    pageSB.dataset.density = "soft";
         pageSB.textContent=scandaltext.slice(pagestartSB, index).join(" ");
-        booksb.appendChild(pageSB);
+        book[0].appendChild(pageSB);
         lengthSB=0;
         pagestartSB=index;
     }
@@ -507,35 +498,35 @@ if (pagestartSB < scandaltext.length) {
     pageSB.classList.add("page");
     pageSB.dataset.density = "soft";
     pageSB.textContent = scandaltext.slice(pagestartSB).join(" ");
-    booksb.appendChild(pageSB);
+    book[0].appendChild(pageSB);
 }
 let coverPageSB = document.createElement("div");
 coverPageSB.classList.add("cpage");
 coverPageSB.appendChild(image[0]);
 coverPageSB.dataset.density = "hard";
-booksb.insertBefore(coverPageSB, booksb.firstChild);
+book[0].insertBefore(coverPageSB, book[0].firstChild);
 let coverPageSB1 = document.createElement("div");
 coverPageSB1.classList.add("cpage");
 coverPageSB1.dataset.density = "hard";
-booksb.insertBefore(coverPageSB1, booksb.children[1]);
+book[0].insertBefore(coverPageSB1, book[0].children[1]);
 let backCoverSB = document.createElement("div");
 backCoverSB.classList.add("cpage");
 backCoverSB.dataset.density = "hard";
 backCoverSB.appendChild(image1[0]);
-booksb.appendChild(backCoverSB);
+book[0].appendChild(backCoverSB);
 let backCoverSB1 = document.createElement("div");
 backCoverSB1.classList.add("cpage");
 backCoverSB1.dataset.density = "hard";
-booksb.insertBefore(backCoverSB1, booksb.lastChild);
+book[0].insertBefore(backCoverSB1, book[0].lastChild);
 
-const pageflipSB = new St.PageFlip(document.querySelector(".booksb"), {
+const pageflipSB = new St.PageFlip(book[0], {
     showCover: true,
     width: window.innerWidth*0.5,
 height: window.innerHeight,
 size: "stretch",
 minHeight: window.innerHeight,
 });
-pageflipSB.loadFromHTML(booksb.querySelectorAll(".page, .cpage"));
+pageflipSB.loadFromHTML(book[0].querySelectorAll(".page, .cpage"));
 });
 
 
@@ -563,7 +554,7 @@ fetch("/assets/stories/signoffour.txt")
         pageSF.classList.add("page");
    pageSF.dataset.density = "soft";
         pageSF.textContent=signtext.slice(pagestartSF, index).join(" ");
-        booksf.appendChild(pageSF);
+        book[5].appendChild(pageSF);
         lengthSF=0;
         pagestartSF=index;
     }
@@ -574,37 +565,37 @@ if (pagestartSF < signtext.length) {
     pageSF.classList.add("page");
     pageSF.dataset.density = "soft";
     pageSF.textContent = signtext.slice(pagestartSF).join(" ");
-    booksf.appendChild(pageSF);
+    book[5].appendChild(pageSF);
 }
 let coverPageSF = document.createElement("div");
 coverPageSF.classList.add("cpage");
 coverPageSF.appendChild(image[5]);
 coverPageSF.dataset.density = "hard";
-booksf.insertBefore(coverPageSF, booksf.firstChild);
+book[5].insertBefore(coverPageSF, book[5].firstChild);
 let coverPageSF1 = document.createElement("div");
 coverPageSF1.classList.add("cpage");
 coverPageSF1.dataset.density = "hard";
-booksf.insertBefore(coverPageSF1, booksf.children[1]);
+book[5].insertBefore(coverPageSF1, book[5].children[1]);
 let backCoverSF = document.createElement("div");
 backCoverSF.classList.add("cpage");
 backCoverSF.dataset.density = "hard";
 backCoverSF.appendChild(image1[5]);
-booksf.appendChild(backCoverSF);
+book[5].appendChild(backCoverSF);
 let backCoverSF1 = document.createElement("div");
 backCoverSF1.classList.add("cpage");
-booksf.insertBefore(backCoverSF1, booksf.lastChild);
+book[5].insertBefore(backCoverSF1, book[5].lastChild);
 let backCoverSF2 = document.createElement("div");
 backCoverSF2.classList.add("cpage");
-booksf.insertBefore(backCoverSF2, booksf.children[booksf.children.length-1]);
+book[5].insertBefore(backCoverSF2, book[5].children[book[5].children.length-1]);
 
-const pageflipSF = new St.PageFlip(document.querySelector(".booksf"), {
+const pageflipSF = new St.PageFlip(book[5], {
     showCover: true,
     width: window.innerWidth*0.5,
 height: window.innerHeight,
 size: "stretch",
 minHeight: window.innerHeight,
 });
-pageflipSF.loadFromHTML(booksf.querySelectorAll(".page, .cpage"));
+pageflipSF.loadFromHTML(book[5].querySelectorAll(".page, .cpage"));
 });
 
 
@@ -632,7 +623,7 @@ fetch("/assets/stories/sixnapoleans.txt")
         pageSN.classList.add("page");
    pageSN.dataset.density = "soft";
         pageSN.textContent=sixtext.slice(pagestartSN, index).join(" ");
-        booksn.appendChild(pageSN);
+        book[6].appendChild(pageSN);
         lengthSN=0;
         pagestartSN=index;
     }
@@ -643,34 +634,34 @@ if (pagestartSN < sixtext.length) {
     pageSN.classList.add("page");
     pageSN.dataset.density = "soft";
     pageSN.textContent = sixtext.slice(pagestartSN).join(" ");
-    booksn.appendChild(pageSN);
+    book[6].appendChild(pageSN);
 }
 let coverPageSN = document.createElement("div");
 coverPageSN.classList.add("cpage");
 coverPageSN.dataset.density = "hard";
 coverPageSN.appendChild(image[6]);
-booksn.insertBefore(coverPageSN, booksn.firstChild);
+book[6].insertBefore(coverPageSN, book[6].firstChild);
 let coverPageSN1 = document.createElement("div");
 coverPageSN1.classList.add("cpage");
 coverPageSN1.dataset.density = "hard";
-booksn.insertBefore(coverPageSN1, booksn.children[1]);
+book[6].insertBefore(coverPageSN1, book[6].children[1]);
 let backCoverSN = document.createElement("div");
 backCoverSN.classList.add("cpage");
 backCoverSN.dataset.density = "hard";
 backCoverSN.appendChild(image1[6]);
-booksn.appendChild(backCoverSN);
+book[6].appendChild(backCoverSN);
 let backCoverSN1 = document.createElement("div");
 backCoverSN1.classList.add("cpage");
-booksn.insertBefore(backCoverSN1, booksn.lastChild);
+book[6].insertBefore(backCoverSN1, book[6].lastChild);
 
-const pageflipSN = new St.PageFlip(document.querySelector(".booksn"), {
+const pageflipSN = new St.PageFlip(book[6], {
     showCover: true,
     width: window.innerWidth*0.5,
 height: window.innerHeight,
 size: "stretch",
 minHeight: window.innerHeight,
 });
-pageflipSN.loadFromHTML(booksn.querySelectorAll(".page, .cpage"));
+pageflipSN.loadFromHTML(book[6].querySelectorAll(".page, .cpage"));
 });
 
 
@@ -696,7 +687,7 @@ fetch("/assets/stories/speckledband.txt")
         pageBand.classList.add("page");
    pageBand.dataset.density = "soft";
         pageBand.textContent=bandtext.slice(pagestartBand, index).join(" ");
-        bookband.appendChild(pageBand);
+        book[7].appendChild(pageBand);
         lengthBand=0;
         pagestartBand=index;
     }
@@ -707,33 +698,33 @@ if (pagestartBand < bandtext.length) {
     pageBand.classList.add("page");
     pageBand.dataset.density = "soft";
     pageBand.textContent = bandtext.slice(pagestartBand).join(" ");
-    bookband.appendChild(pageBand);
+    book[7].appendChild(pageBand);
 }
 let coverPageBand = document.createElement("div");
 coverPageBand.classList.add("cpage");
 coverPageBand.appendChild(image[7]);
 coverPageBand.dataset.density = "hard";
-bookband.insertBefore(coverPageBand, bookband.firstChild);
+book[7].insertBefore(coverPageBand, book[7].firstChild);
 let coverPageBand1 = document.createElement("div");
 coverPageBand1.classList.add("cpage");
 coverPageBand1.dataset.density = "hard";
-bookband.insertBefore(coverPageBand1, bookband.children[1]);
+book[7].insertBefore(coverPageBand1, book[7].children[1]);
 let backCoverBand = document.createElement("div");
 backCoverBand.classList.add("cpage");
 backCoverBand.appendChild(image1[7]);
 backCoverBand.dataset.density = "hard";
-bookband.appendChild(backCoverBand);
+book[7].appendChild(backCoverBand);
 let backCoverBand1 = document.createElement("div");
 backCoverBand1.classList.add("cpage");
-bookband.insertBefore(backCoverBand1, bookband.lastChild);
-const pageflipBand = new St.PageFlip(document.querySelector(".bookband"), {
+book[7].insertBefore(backCoverBand1, book[7].lastChild);
+const pageflipBand = new St.PageFlip(book[7], {
     showCover: true,
     width: window.innerWidth*0.5,
 height: window.innerHeight,
 size: "stretch",
 minHeight: window.innerHeight,
 });
-pageflipBand.loadFromHTML(bookband.querySelectorAll(".page, .cpage"));
+pageflipBand.loadFromHTML(book[7].querySelectorAll(".page, .cpage"));
 });
 
 
@@ -758,7 +749,7 @@ fetch("/assets/stories/studyinscarlet.txt")
         pageScarlet.classList.add("page");
    pageScarlet.dataset.density = "soft";
         pageScarlet.textContent=sstext.slice(pagestartScarlet, index).join(" ");
-        bookss.appendChild(pageScarlet);
+        book[8].appendChild(pageScarlet);
         lengthScarlet=0;
         pagestartScarlet=index;
     }
@@ -769,37 +760,37 @@ if (pagestartScarlet < sstext.length) {
     pageScarlet.classList.add("page");
     pageScarlet.dataset.density = "soft";
     pageScarlet.textContent = sstext.slice(pagestartScarlet).join(" ");
-    bookss.appendChild(pageScarlet);
+    book[8].appendChild(pageScarlet);
 }
 let coverPageScarlet = document.createElement("div");
 coverPageScarlet.classList.add("cpage");
 coverPageScarlet.appendChild(image[8]);
 coverPageScarlet.dataset.density = "hard";
-bookss.insertBefore(coverPageScarlet, bookss.firstChild);
+book[8].insertBefore(coverPageScarlet, book[8].firstChild);
 let coverPageScarlet1 = document.createElement("div");
 coverPageScarlet1.classList.add("cpage");
 coverPageScarlet1.dataset.density = "hard";
-bookss.insertBefore(coverPageScarlet1, bookss.children[1]);
+book[8].insertBefore(coverPageScarlet1, book[8].children[1]);
 let backCoverScarlet = document.createElement("div");
 backCoverScarlet.classList.add("cpage");
 backCoverScarlet.appendChild(image1[8]);
 backCoverScarlet.dataset.density = "hard";
-bookss.appendChild(backCoverScarlet);
+book[8].appendChild(backCoverScarlet);
 let backCoverScarlet1 = document.createElement("div");
 backCoverScarlet1.classList.add("cpage");
-bookss.insertBefore(backCoverScarlet1, bookss.lastChild);
+book[8].insertBefore(backCoverScarlet1, book[8].lastChild);
 let backCoverScarlet2 = document.createElement("div");
 backCoverScarlet2.classList.add("cpage");
-bookss.insertBefore(backCoverScarlet2, bookss.children[bookss.children.length-1]);
+book[8].insertBefore(backCoverScarlet2, book[8].children[book[8].children.length-1]);
 
-const pageflipScarlet = new St.PageFlip(document.querySelector(".bookss"), {
+const pageflipScarlet = new St.PageFlip(book[8], {
     showCover: true,
     width: window.innerWidth*0.5,
 height: window.innerHeight,
 size: "stretch",
 minHeight: window.innerHeight,
 });
-pageflipScarlet.loadFromHTML(bookss.querySelectorAll(".page, .cpage"));
+pageflipScarlet.loadFromHTML(book[8].querySelectorAll(".page, .cpage"));
 });
 
 
@@ -825,7 +816,7 @@ fetch("/assets/stories/valleyoffear.txt")
         pageVF.classList.add("page");
    pageVF.dataset.density = "soft";
         pageVF.textContent=vftext.slice(pagestartVF, index).join(" ");
-        bookvf.appendChild(pageVF);
+        book[9].appendChild(pageVF);
         lengthVF=0;
         pagestartVF=index;
     }
@@ -836,27 +827,27 @@ if (pagestartVF < vftext.length) {
     pageVF.classList.add("page");
     pageVF.dataset.density = "soft";
     pageVF.textContent = vftext.slice(pagestartVF).join(" ");
-    bookvf.appendChild(pageVF);
+    book[9].appendChild(pageVF);
 }
 let coverPageVF = document.createElement("div");
 coverPageVF.classList.add("cpage");
 coverPageVF.appendChild(image[9]);
 coverPageVF.dataset.density = "hard";
-bookvf.insertBefore(coverPageVF, bookvf.firstChild);
+book[9].insertBefore(coverPageVF, book[9].firstChild);
 let coverPageVF1 = document.createElement("div");
 coverPageVF1.classList.add("cpage");
 coverPageVF1.dataset.density = "hard";
-bookvf.insertBefore(coverPageVF1, bookvf.children[1]);
+book[9].insertBefore(coverPageVF1, book[9].children[1]);
 let backCoverVF = document.createElement("div");
 backCoverVF.classList.add("cpage");
 backCoverVF.appendChild(image1[9]);
 backCoverVF.dataset.density = "hard";
-bookvf.appendChild(backCoverVF);
+book[9].appendChild(backCoverVF);
 let backCoverVF1 = document.createElement("div");
 backCoverVF1.classList.add("cpage");
-bookvf.insertBefore(backCoverVF1, bookvf.lastChild);
+book[9].insertBefore(backCoverVF1, book[9].lastChild);
 
-const pageflipVF = new St.PageFlip(document.querySelector(".bookvf"), {
+const pageflipVF = new St.PageFlip(book[9], {
     showCover: true,
     width: window.innerWidth*0.5,
 height: window.innerHeight,
@@ -864,7 +855,7 @@ size: "stretch",
 minHeight: window.innerHeight,
 
 });
-pageflipVF.loadFromHTML(bookvf.querySelectorAll(".page, .cpage"));
+pageflipVF.loadFromHTML(book[9].querySelectorAll(".page, .cpage"));
 });
 
 
@@ -938,7 +929,7 @@ carddiv.forEach((card) => {
 
 
 
-
+var exit = document.querySelector(".exit");
 
 
 
@@ -953,8 +944,8 @@ carddiv[1].addEventListener("click", () => {
         light.style.display = "none";
         god.style.display = "none";
         cord.style.display = "none";
-        setTimeout(() => {bookeh.style.top = "0";
- blacksheet.style.display="none";}, 1250);
+        setTimeout(() => {book[1].style.top = "0";
+ blacksheet.style.display="none"; exit.style.display="block";}, 1380);
 
     dim.style.display = "none";}
     })
@@ -967,8 +958,8 @@ carddiv[1].addEventListener("click", () => {
         light.style.display = "none";
         god.style.display = "none";
         cord.style.display = "none";
-        setTimeout(() => {bookfp.style.top = "0";
- blacksheet.style.display="none";}, 1380);
+        setTimeout(() => {book[2].style.top = "0";
+ blacksheet.style.display="none"; exit.style.display="block";}, 1380);
     dim.style.display = "none";}
     })
  
@@ -980,8 +971,8 @@ carddiv[3].addEventListener("click", () => {
         light.style.display = "none";
         god.style.display = "none";
         cord.style.display = "none";
-        setTimeout(() => {bookhb.style.top = "0";
- blacksheet.style.display="none";}, 1380);
+        setTimeout(() => {book[3].style.top = "0";
+ blacksheet.style.display="none"; exit.style.display="block";}, 1380);
     dim.style.display = "none";}
     })
  
@@ -994,8 +985,8 @@ carddiv[4].addEventListener("click", () => {
         god.style.display = "none";
         cord.style.display = "none";
         light.style.display = "none";
-        setTimeout(() => {bookrl.style.top = "0";
- blacksheet.style.display="none";}, 1380);
+        setTimeout(() => {book[4].style.top = "0";
+ blacksheet.style.display="none"; exit.style.display="block";}, 1380);
     dim.style.display = "none";}
     })
 carddiv[0].addEventListener("click", () => {
@@ -1006,8 +997,8 @@ carddiv[0].addEventListener("click", () => {
         light.style.display = "none";
         god.style.display = "none";
         cord.style.display = "none";
-        setTimeout(() => {booksb.style.top = "0";
- blacksheet.style.display="none";}, 1380);
+        setTimeout(() => {book[0].style.top = "0";
+ blacksheet.style.display="none"; exit.style.display="block";}, 1380);
     dim.style.display = "none";}
     })
 carddiv[5].addEventListener("click", () => {
@@ -1019,7 +1010,7 @@ carddiv[5].addEventListener("click", () => {
         god.style.display = "none";
         cord.style.display = "none";
         light.style.display = "none";
-        setTimeout(() => {booksf.style.top = "0";
+        setTimeout(() => {book[5].style.top = "0";
  blacksheet.style.display="none";}, 1380);
     dim.style.display = "none";}
     })
@@ -1032,8 +1023,8 @@ carddiv[5].addEventListener("click", () => {
         god.style.display = "none";
         cord.style.display = "none";
         light.style.display = "none";
-        setTimeout(() => {booksn.style.top = "0";
- blacksheet.style.display="none";}, 1380);
+        setTimeout(() => {book[6].style.top = "0";
+ blacksheet.style.display="none"; exit.style.display="block";}, 1380);
     dim.style.display = "none";}
     })
     carddiv[7].addEventListener("click", () => {
@@ -1045,8 +1036,8 @@ carddiv[5].addEventListener("click", () => {
         god.style.display = "none";
         cord.style.display = "none";
         light.style.display = "none";
-        setTimeout(() => {bookband.style.top = "0";
- blacksheet.style.display="none";}, 1380);
+        setTimeout(() => {book[7].style.top = "0";
+ blacksheet.style.display="none"; exit.style.display="block";}, 1380);
     dim.style.display = "none";}
     })
     carddiv[8].addEventListener("click", () => {
@@ -1058,8 +1049,8 @@ carddiv[5].addEventListener("click", () => {
         god.style.display = "none";
         cord.style.display = "none";
         light.style.display = "none";
-        setTimeout(() => {bookss.style.top = "0";
- blacksheet.style.display="none";}, 1380);
+        setTimeout(() => {book[8].style.top = "0";
+ blacksheet.style.display="none"; exit.style.display="block";}, 1380);
     dim.style.display = "none";}
     })
     carddiv[9].addEventListener("click", () => {
@@ -1071,8 +1062,8 @@ carddiv[5].addEventListener("click", () => {
         god.style.display = "none";
         cord.style.display = "none";
         light.style.display = "none";
-        setTimeout(() => {bookvf.style.top = "0";
- blacksheet.style.display="none";}, 1380);
+        setTimeout(() => {book[9].style.top = "0";
+ blacksheet.style.display="none"; exit.style.display="block";}, 1380);
     dim.style.display = "none";}
     })
 
@@ -1101,3 +1092,34 @@ cord.addEventListener("click", () => {
         button=1;
     }})
 
+
+
+    var cross = document.querySelector(".cross");
+    cross.addEventListener("mouseover", () => {
+        cross.classList.add("crosshover");
+        document.querySelector(".circle").classList.add("circlehover");
+    });
+    cross.addEventListener("mouseout", () => {
+        cross.classList.remove("crosshover");
+        document.querySelector(".circle").classList.remove("circlehover");
+    });
+   book.forEach((bk) => {carddiv.forEach((card) => {cross.addEventListener("click", () => {
+        exit.style.display = "none";
+        bk.style.top = "";
+        god.style.display = "block";
+        blacksheet.style.display = "none";
+        cord.style.display = "block";
+       god.style.animation="none";
+       card.style.animation="none";
+       card.classList.remove("cardclicked");
+      card.style.position = "absolute";
+     
+      card.style.top = "";
+      card.style.left = "";
+      card.style.right = "";
+      dim.style.display = "none";
+       cardclicked=0;
+       
+       
+    })
+    })})
