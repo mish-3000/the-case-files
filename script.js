@@ -197,148 +197,19 @@ var bookvf = document.querySelector(".bookvf");
 
 
 
+const image=[];
+const image1=[];
 
-
-
-
-var imageEH= document.createElement("img");
-imageEH.src="/assets/covers/frontcover.png";
-imageEH.style.width=window.innerWidth*0.5 + 'px';
-imageEH.style.height=window.innerHeight + 'px';
-var image1EH= document.createElement("img");
-image1EH.src="/assets/covers/backcover.png";
-image1EH.style.width=window.innerWidth*0.5 + 'px';
-image1EH.style.height=window.innerHeight + 'px';
-
-var imageFP = document.createElement("img");
-imageFP.src="/assets/covers/frontcover.png";
-imageFP.style.width=window.innerWidth*0.5 + 'px';
-imageFP.style.height=window.innerHeight + 'px';
-var image1FP = document.createElement("img");
-image1FP.src="/assets/covers/backcover.png";
-image1FP.style.width=window.innerWidth*0.5 + 'px';
-image1FP.style.height=window.innerHeight + 'px';
-
-var imageHB = document.createElement("img");
-imageHB.src="/assets/covers/frontcover.png";
-imageHB.style.width=window.innerWidth*0.5 + 'px';
-imageHB.style.height=window.innerHeight + 'px';
-var image1HB = document.createElement("img");
-image1HB.src="/assets/covers/backcover.png";
-image1HB.style.width=window.innerWidth*0.5 + 'px';
-image1HB.style.height=window.innerHeight + 'px';
-
-var imageRL = document.createElement("img");
-imageRL.src="/assets/covers/frontcover.png";
-imageRL.style.width=window.innerWidth*0.5 + 'px';
-imageRL.style.height=window.innerHeight + 'px';
-var image1RL = document.createElement("img");
-image1RL.src="/assets/covers/backcover.png";
-image1RL.style.width=window.innerWidth*0.5 + 'px';
-image1RL.style.height=window.innerHeight + 'px';
-
-var imageSB = document.createElement("img");
-imageSB.src="/assets/covers/frontcover.png";
-imageSB.style.width=window.innerWidth*0.5 + 'px';
-imageSB.style.height=window.innerHeight + 'px'; 
-var image1SB = document.createElement("img");
-image1SB.src="/assets/covers/backcover.png";
-image1SB.style.width=window.innerWidth*0.5 + 'px';
-image1SB.style.height=window.innerHeight + 'px';
-
-var imageSF = document.createElement("img");
-imageSF.src="/assets/covers/frontcover.png";
-imageSF.style.width=window.innerWidth*0.5 + 'px';
-imageSF.style.height=window.innerHeight + 'px';
-var image1SF = document.createElement("img");
-image1SF.src="/assets/covers/backcover.png";
-image1SF.style.width=window.innerWidth*0.5 + 'px';
-image1SF.style.height=window.innerHeight + 'px';
-
-var imageSN = document.createElement("img");
-imageSN.src="/assets/covers/frontcover.png";
-imageSN.style.width=window.innerWidth*0.5 + 'px';
-imageSN.style.height=window.innerHeight + 'px';
-var image1SN = document.createElement("img");
-image1SN.src="/assets/covers/backcover.png";
-image1SN.style.width=window.innerWidth*0.5 + 'px';
-image1SN.style.height=window.innerHeight + 'px';
-
-var imageBand = document.createElement("img");
-imageBand.src="/assets/covers/frontcover.png";
-imageBand.style.width=window.innerWidth*0.5 + 'px';
-imageBand.style.height=window.innerHeight + 'px';
-var image1Band = document.createElement("img");
-image1Band.src="/assets/covers/backcover.png";
-image1Band.style.width=window.innerWidth*0.5 + 'px';
-image1Band.style.height=window.innerHeight + 'px';
-
-var imageSS = document.createElement("img");
-imageSS.src="/assets/covers/frontcover.png";
-imageSS.style.width=window.innerWidth*0.5 + 'px';
-imageSS.style.height=window.innerHeight + 'px';
-var image1SS = document.createElement("img");
-image1SS.src="/assets/covers/backcover.png";
-image1SS.style.width=window.innerWidth*0.5 + 'px';
-image1SS.style.height=window.innerHeight + 'px';
-
-var imageVF = document.createElement("img");
-imageVF.src="/assets/covers/frontcover.png";
-imageVF.style.width=window.innerWidth*0.5 + 'px';
-imageVF.style.height=window.innerHeight + 'px';
-var image1VF = document.createElement("img");
-image1VF.src="/assets/covers/backcover.png";
-image1VF.style.width=window.innerWidth*0.5 + 'px';
-image1VF.style.height=window.innerHeight + 'px';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+carddiv.forEach((card, index) => {var img = document.createElement("img");
+img.src="/assets/covers/frontcover.png";
+img.style.width=window.innerWidth*0.5 + 'px';
+img.style.height=window.innerHeight + 'px';
+var img1 = document.createElement("img");
+img1.src="/assets/covers/backcover.png";
+img1.style.width=window.innerWidth*0.5 + 'px';
+img1.style.height=window.innerHeight + 'px';
+image.push(img);
+image1.push(img1);});
 
 
 
@@ -381,7 +252,7 @@ if (pagestartEH < emptyhousetext.length) {
 let coverPage = document.createElement("div");
 coverPage.classList.add("cpage");
 coverPage.dataset.density = "hard";
-coverPage.appendChild(imageEH);
+coverPage.appendChild(image[1]);
 bookeh.insertBefore(coverPage, bookeh.firstChild);
 let coverPage2 = document.createElement("div");
 coverPage2.classList.add("cpage");
@@ -390,7 +261,7 @@ bookeh.insertBefore(coverPage2, bookeh.children[1]);
 let backCover = document.createElement("div");
 backCover.classList.add("cpage");
 backCover.dataset.density = "hard";
-backCover.appendChild(image1EH);
+backCover.appendChild(image1[1]);
 bookeh.appendChild(backCover);
 let backCover2 = document.createElement("div");
 backCover2.classList.add("cpage");
@@ -449,7 +320,7 @@ if (pagestartFP < finalproblemtext.length) {
 let coverPageFP = document.createElement("div");
 coverPageFP.classList.add("cpage");
 coverPageFP.dataset.density = "hard";
-coverPageFP.appendChild(imageFP);
+coverPageFP.appendChild(image[2]);
 bookfp.insertBefore(coverPageFP, bookfp.firstChild);
 let coverPageFP2 = document.createElement("div");
 coverPageFP2.classList.add("cpage");
@@ -458,7 +329,7 @@ bookfp.insertBefore(coverPageFP2, bookfp.children[1]);
 let backCoverFP = document.createElement("div");
 backCoverFP.classList.add("cpage");
 backCoverFP.dataset.density = "hard";
-backCoverFP.appendChild(image1FP); 
+backCoverFP.appendChild(image1[2]); 
 bookfp.appendChild(backCoverFP);
 let backCoverFP1 = document.createElement("div");
 backCoverFP1.classList.add("cpage");
@@ -510,7 +381,7 @@ if (pagestartHB < houndofbaskervillestext.length) {
 }
 let coverPageHB = document.createElement("div");
 coverPageHB.classList.add("cpage");
-coverPageHB.appendChild(imageHB);
+coverPageHB.appendChild(image[3]);
 coverPageHB.dataset.density = "hard";
 bookhb.insertBefore(coverPageHB, bookhb.firstChild);
 let coverPageHB1 = document.createElement("div");
@@ -519,7 +390,7 @@ coverPageHB1.dataset.density = "hard";
 bookhb.insertBefore(coverPageHB1, bookhb.children[1]);
 let backCoverHB = document.createElement("div");
 backCoverHB.classList.add("cpage");
-backCoverHB.appendChild(image1HB);
+backCoverHB.appendChild(image1[3]);
 backCoverHB.dataset.density = "hard";
 bookhb.appendChild(backCoverHB);
 let backCoverHB1 = document.createElement("div");
@@ -576,7 +447,7 @@ if (pagestartRL < redtext.length) {
 }
 let coverPageRL = document.createElement("div");
 coverPageRL.classList.add("cpage");
-coverPageRL.appendChild(imageRL);
+coverPageRL.appendChild(image[4]);
 coverPageRL.dataset.density = "hard";
 bookrl.insertBefore(coverPageRL, bookrl.firstChild);
 let coverPageRL1 = document.createElement("div");
@@ -586,7 +457,7 @@ bookrl.insertBefore(coverPageRL1, bookrl.children[1]);
 let backCoverRL = document.createElement("div");
 backCoverRL.classList.add("cpage");
 backCoverRL.dataset.density = "hard";
-backCoverRL.appendChild(image1RL);
+backCoverRL.appendChild(image1[4]);
 bookrl.appendChild(backCoverRL);
 let backCoverRL1 = document.createElement("div");
 backCoverRL1.classList.add("cpage");
@@ -640,7 +511,7 @@ if (pagestartSB < scandaltext.length) {
 }
 let coverPageSB = document.createElement("div");
 coverPageSB.classList.add("cpage");
-coverPageSB.appendChild(imageSB);
+coverPageSB.appendChild(image[0]);
 coverPageSB.dataset.density = "hard";
 booksb.insertBefore(coverPageSB, booksb.firstChild);
 let coverPageSB1 = document.createElement("div");
@@ -650,7 +521,7 @@ booksb.insertBefore(coverPageSB1, booksb.children[1]);
 let backCoverSB = document.createElement("div");
 backCoverSB.classList.add("cpage");
 backCoverSB.dataset.density = "hard";
-backCoverSB.appendChild(image1SB);
+backCoverSB.appendChild(image1[0]);
 booksb.appendChild(backCoverSB);
 let backCoverSB1 = document.createElement("div");
 backCoverSB1.classList.add("cpage");
@@ -707,7 +578,7 @@ if (pagestartSF < signtext.length) {
 }
 let coverPageSF = document.createElement("div");
 coverPageSF.classList.add("cpage");
-coverPageSF.appendChild(imageSF);
+coverPageSF.appendChild(image[5]);
 coverPageSF.dataset.density = "hard";
 booksf.insertBefore(coverPageSF, booksf.firstChild);
 let coverPageSF1 = document.createElement("div");
@@ -717,7 +588,7 @@ booksf.insertBefore(coverPageSF1, booksf.children[1]);
 let backCoverSF = document.createElement("div");
 backCoverSF.classList.add("cpage");
 backCoverSF.dataset.density = "hard";
-backCoverSF.appendChild(image1SF);
+backCoverSF.appendChild(image1[5]);
 booksf.appendChild(backCoverSF);
 let backCoverSF1 = document.createElement("div");
 backCoverSF1.classList.add("cpage");
@@ -777,7 +648,7 @@ if (pagestartSN < sixtext.length) {
 let coverPageSN = document.createElement("div");
 coverPageSN.classList.add("cpage");
 coverPageSN.dataset.density = "hard";
-coverPageSN.appendChild(imageSN);
+coverPageSN.appendChild(image[6]);
 booksn.insertBefore(coverPageSN, booksn.firstChild);
 let coverPageSN1 = document.createElement("div");
 coverPageSN1.classList.add("cpage");
@@ -786,7 +657,7 @@ booksn.insertBefore(coverPageSN1, booksn.children[1]);
 let backCoverSN = document.createElement("div");
 backCoverSN.classList.add("cpage");
 backCoverSN.dataset.density = "hard";
-backCoverSN.appendChild(image1SN);
+backCoverSN.appendChild(image1[6]);
 booksn.appendChild(backCoverSN);
 let backCoverSN1 = document.createElement("div");
 backCoverSN1.classList.add("cpage");
@@ -840,7 +711,7 @@ if (pagestartBand < bandtext.length) {
 }
 let coverPageBand = document.createElement("div");
 coverPageBand.classList.add("cpage");
-coverPageBand.appendChild(imageBand);
+coverPageBand.appendChild(image[7]);
 coverPageBand.dataset.density = "hard";
 bookband.insertBefore(coverPageBand, bookband.firstChild);
 let coverPageBand1 = document.createElement("div");
@@ -849,7 +720,7 @@ coverPageBand1.dataset.density = "hard";
 bookband.insertBefore(coverPageBand1, bookband.children[1]);
 let backCoverBand = document.createElement("div");
 backCoverBand.classList.add("cpage");
-backCoverBand.appendChild(image1Band);
+backCoverBand.appendChild(image1[7]);
 backCoverBand.dataset.density = "hard";
 bookband.appendChild(backCoverBand);
 let backCoverBand1 = document.createElement("div");
@@ -902,7 +773,7 @@ if (pagestartScarlet < sstext.length) {
 }
 let coverPageScarlet = document.createElement("div");
 coverPageScarlet.classList.add("cpage");
-coverPageScarlet.appendChild(imageSS);
+coverPageScarlet.appendChild(image[8]);
 coverPageScarlet.dataset.density = "hard";
 bookss.insertBefore(coverPageScarlet, bookss.firstChild);
 let coverPageScarlet1 = document.createElement("div");
@@ -911,7 +782,7 @@ coverPageScarlet1.dataset.density = "hard";
 bookss.insertBefore(coverPageScarlet1, bookss.children[1]);
 let backCoverScarlet = document.createElement("div");
 backCoverScarlet.classList.add("cpage");
-backCoverScarlet.appendChild(image1SS);
+backCoverScarlet.appendChild(image1[8]);
 backCoverScarlet.dataset.density = "hard";
 bookss.appendChild(backCoverScarlet);
 let backCoverScarlet1 = document.createElement("div");
@@ -969,7 +840,7 @@ if (pagestartVF < vftext.length) {
 }
 let coverPageVF = document.createElement("div");
 coverPageVF.classList.add("cpage");
-coverPageVF.appendChild(imageVF);
+coverPageVF.appendChild(image[9]);
 coverPageVF.dataset.density = "hard";
 bookvf.insertBefore(coverPageVF, bookvf.firstChild);
 let coverPageVF1 = document.createElement("div");
@@ -978,7 +849,7 @@ coverPageVF1.dataset.density = "hard";
 bookvf.insertBefore(coverPageVF1, bookvf.children[1]);
 let backCoverVF = document.createElement("div");
 backCoverVF.classList.add("cpage");
-backCoverVF.appendChild(image1VF);
+backCoverVF.appendChild(image1[9]);
 backCoverVF.dataset.density = "hard";
 bookvf.appendChild(backCoverVF);
 let backCoverVF1 = document.createElement("div");
