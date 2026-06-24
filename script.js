@@ -40,7 +40,7 @@ let path= document.createElementNS("http://www.w3.org/2000/svg", "path");
 
 path.setAttribute("stroke", "rgb(128, 0, 0,1)");
 path.setAttribute("fill", "transparent");
-path.setAttribute("stroke-width", "3");
+path.setAttribute("stroke-width", "3.6");
 patharr.push(path);
 svg.appendChild(path);
 }
@@ -74,11 +74,28 @@ if (points.length >= 10) {
     for (let i = 0; i < patharr.length; i++) {
 
     patharr[i].setAttribute("d", pathdata[i]);
+    
 
     }}}
-    setTimeout(() => { drawThreads(); }, 8000);
+    
+    setTimeout(() => { drawThreads();
+        setTimeout(() => { patharr.forEach((path) => {
+            path.classList.remove("draw");
+            path.style.strokeDasharray = "";
+            path.style.strokeDashoffset = "";
+        }); }, 2800);
+    }, 8000);
+    
+    for (let i = 0; i < patharr.length; i++) { 
+        setTimeout(() => {     patharr[i].style.strokeDasharray = patharr[i].getTotalLength();
+    patharr[i].style.strokeDashoffset = patharr[i].getTotalLength();}, 8000);
 
-god.addEventListener("scroll", drawThreads);
+
+        setTimeout(() => { patharr[i].classList.add("draw");
+        }, 9000);
+    }
+
+   god.addEventListener("scroll", drawThreads);
 
 
 
@@ -933,139 +950,26 @@ var exit = document.querySelector(".exit");
 
 
 
+let bookopenindex="";
 
 
+carddiv.forEach((card, index) => {
+card.addEventListener("click", () => {
+    if (cardclicked === 2) {
+        
+        god.appendChild(card);
+        blacksheet.style.display = "block";
+        
+        god.style.display = "none";
+        cord.style.display = "none";
+        light.style.display = "none";
+        bookopenindex=index;
+    dim.style.display = "none";
+    }})});
 
-carddiv[1].addEventListener("click", () => {
-    if (cardclicked === 2) {
-        
-        god.appendChild(carddiv[1]);
-        blacksheet.style.display = "block";
-        light.style.display = "none";
-        god.style.display = "none";
-        cord.style.display = "none";
-        setTimeout(() => {book[1].style.top = "0";
- blacksheet.style.display="none"; exit.style.display="block";}, 1380);
-
-    dim.style.display = "none";}
-    })
-
-   carddiv[2].addEventListener("click", () => {
-    if (cardclicked === 2) {
-        
-        god.appendChild(carddiv[2]);
-        blacksheet.style.display = "block";
-        light.style.display = "none";
-        god.style.display = "none";
-        cord.style.display = "none";
-        setTimeout(() => {book[2].style.top = "0";
- blacksheet.style.display="none"; exit.style.display="block";}, 1380);
-    dim.style.display = "none";}
-    })
- 
-carddiv[3].addEventListener("click", () => {
-    if (cardclicked === 2) {
-        
-        god.appendChild(carddiv[3]);
-        blacksheet.style.display = "block";
-        light.style.display = "none";
-        god.style.display = "none";
-        cord.style.display = "none";
-        setTimeout(() => {book[3].style.top = "0";
- blacksheet.style.display="none"; exit.style.display="block";}, 1380);
-    dim.style.display = "none";}
-    })
- 
-carddiv[4].addEventListener("click", () => {
-    if (cardclicked === 2) {
-        
-        god.appendChild(carddiv[4]);
-        blacksheet.style.display = "block";
-        
-        god.style.display = "none";
-        cord.style.display = "none";
-        light.style.display = "none";
-        setTimeout(() => {book[4].style.top = "0";
- blacksheet.style.display="none"; exit.style.display="block";}, 1380);
-    dim.style.display = "none";}
-    })
-carddiv[0].addEventListener("click", () => {
-    if (cardclicked === 2) {
-        
-        god.appendChild(carddiv[0]);
-        blacksheet.style.display = "block";
-        light.style.display = "none";
-        god.style.display = "none";
-        cord.style.display = "none";
-        setTimeout(() => {book[0].style.top = "0";
- blacksheet.style.display="none"; exit.style.display="block";}, 1380);
-    dim.style.display = "none";}
-    })
-carddiv[5].addEventListener("click", () => {
-    if (cardclicked === 2) {
-        
-        god.appendChild(carddiv[5]);
-        blacksheet.style.display = "block";
-        
-        god.style.display = "none";
-        cord.style.display = "none";
-        light.style.display = "none";
-        setTimeout(() => {book[5].style.top = "0";
- blacksheet.style.display="none";}, 1380);
-    dim.style.display = "none";}
-    })
-    carddiv[6].addEventListener("click", () => {
-    if (cardclicked === 2) {
-        
-        god.appendChild(carddiv[6]);
-        blacksheet.style.display = "block";
-        
-        god.style.display = "none";
-        cord.style.display = "none";
-        light.style.display = "none";
-        setTimeout(() => {book[6].style.top = "0";
- blacksheet.style.display="none"; exit.style.display="block";}, 1380);
-    dim.style.display = "none";}
-    })
-    carddiv[7].addEventListener("click", () => {
-    if (cardclicked === 2) {
-        
-        god.appendChild(carddiv[7]);
-        blacksheet.style.display = "block";
-        
-        god.style.display = "none";
-        cord.style.display = "none";
-        light.style.display = "none";
-        setTimeout(() => {book[7].style.top = "0";
- blacksheet.style.display="none"; exit.style.display="block";}, 1380);
-    dim.style.display = "none";}
-    })
-    carddiv[8].addEventListener("click", () => {
-    if (cardclicked === 2) {
-        
-        god.appendChild(carddiv[8]);
-        blacksheet.style.display = "block";
-        
-        god.style.display = "none";
-        cord.style.display = "none";
-        light.style.display = "none";
-        setTimeout(() => {book[8].style.top = "0";
- blacksheet.style.display="none"; exit.style.display="block";}, 1380);
-    dim.style.display = "none";}
-    })
-    carddiv[9].addEventListener("click", () => {
-    if (cardclicked === 2) {
-        
-        god.appendChild(carddiv[9]);
-        blacksheet.style.display = "block";
-        
-        god.style.display = "none";
-        cord.style.display = "none";
-        light.style.display = "none";
-        setTimeout(() => {book[9].style.top = "0";
- blacksheet.style.display="none"; exit.style.display="block";}, 1380);
-    dim.style.display = "none";}
-    })
+blacksheet.addEventListener("animationend", (e) => {if(e.animationName === "fadeinblack") {
+    book[bookopenindex].style.top = "0";
+ blacksheet.style.opacity="0"; exit.style.display="block"; book[bookopenindex].style.animation="fadeinblack 1s ease forwards"; }})
 
     var cord = document.querySelector(".cord");
     let button=0;
@@ -1083,16 +987,24 @@ cord.addEventListener("click", () => {
 cord.addEventListener("click", () => {
     if (button===1) {
         night.style.display = "block";
-        light.style.display = "none";
+        light.classList.add("lightflickeroff");
         button=0;
     }
     else {
         night.style.display = "none";
         light.style.display = "block";
+        light.classList.add("lightflickeron");
         button=1;
     }})
 
-
+light.addEventListener("animationend", (e) => {
+    if (e.animationName === "lightflickeroff") {
+        light.classList.remove("lightflickeroff");
+        light.style.display = "none";
+    }
+    else if (e.animationName === "lightflickeron") {
+        light.classList.remove("lightflickeron");
+    }})
 
     var cross = document.querySelector(".cross");
     cross.addEventListener("mouseover", () => {
@@ -1103,23 +1015,22 @@ cord.addEventListener("click", () => {
         cross.classList.remove("crosshover");
         document.querySelector(".circle").classList.remove("circlehover");
     });
-   book.forEach((bk) => {carddiv.forEach((card) => {cross.addEventListener("click", () => {
+   cross.addEventListener("click", () => {
         exit.style.display = "none";
-        bk.style.top = "";
+        book[bookopenindex].style.top = "";
         god.style.display = "block";
         blacksheet.style.display = "none";
         cord.style.display = "block";
        god.style.animation="none";
-       card.style.animation="none";
-       card.classList.remove("cardclicked");
-      card.style.position = "absolute";
-     
-      card.style.top = "";
-      card.style.left = "";
-      card.style.right = "";
+       carddiv[bookopenindex].style.animation="";
+       carddiv[bookopenindex].classList.remove("cardclicked");
+      carddiv[bookopenindex].style.position = "absolute";
+      carddiv[bookopenindex].style.top = "";
+      carddiv[bookopenindex].style.left = "";
+      carddiv[bookopenindex].style.right = "";
       dim.style.display = "none";
        cardclicked=0;
-       
+       bookopenindex="";
        
     })
-    })})
+    
