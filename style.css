@@ -57,14 +57,63 @@ font-family: "Cinzel", serif;
 }   
 
 @keyframes flicker {
- 0%   { opacity: 0; }
-  15%  { opacity: 0.3; }
-  30%  { opacity: 0; }
-  50%  { opacity: 0.6; }
-  65%  { opacity: 0; }
-  80%  { opacity: 0.6; }
-  90%  { opacity: 1; }
-  100% { opacity: 1; }
+0% { 
+    opacity: 0; 
+    filter: blur(20px); 
+  }
+  4% { 
+    opacity: 0.55;       
+    filter: blur(18px); 
+  }
+  8% { 
+    opacity: 0; 
+  }
+  12% { 
+    opacity: 0.65;       
+    filter: blur(15px); 
+  }
+  16% { 
+    opacity: 0; 
+    filter: blur(12px);
+  }
+
+  30% { 
+    opacity: 0; 
+    filter: blur(10px);
+  } 
+
+  
+  45% { 
+    opacity: 0.60; 
+    filter: blur(8px);  
+  }
+  54% { 
+    opacity: 0; 
+  }
+  64% { 
+    opacity: 0.75; 
+    filter: blur(6px);  
+  }
+  72% { 
+    opacity: 0.15; 
+    filter: blur(7px); 
+  }
+  82% { 
+    opacity: 0.95; 
+    filter: blur(4px); 
+  }
+  85% { 
+    opacity: 0;       
+  }
+
+  86% { 
+    opacity: 1; 
+    filter: blur(0px);  
+  }
+  100% { 
+    opacity: 1; 
+    filter: blur(0px);
+  }
 }
 
 
@@ -107,7 +156,7 @@ font-family: "Cinzel", serif;
 
 
 
-.card{
+.caseimg{
     width: 8rem;
     height: 10.6rem;
     padding: 0.5rem 0.5rem 1.5rem 0.5rem;
@@ -129,8 +178,8 @@ font-family: "Cinzel", serif;
   
 }
 
-.god{display: none; height: 100vh; width: 100vw; animation: fadeout 2s linear 1s 1 reverse ; overflow: auto; position: fixed;}
-.sib{transform-origin: 96% 5%;
+.EvidenceBoard{display: none; height: 100vh; width: 100vw; animation: fadeout 2s linear 1s 1 reverse ; overflow: auto; position: fixed;}
+.A_Scandal_in_Bohemia{transform-origin: 96% 5%;
     transform: rotate(-15deg);
     top: 14.3vh;
     left: 4vw;}
@@ -140,15 +189,15 @@ font-family: "Cinzel", serif;
   cursor: pointer;
 
 }
-.eh{ top: 8.7vh; left: 38.3vw; }
-.fb{ top: 4.3vh; left: 64.3vw; transform: rotate(10deg); transform-origin: top left;}
-.hb{ top: 30.7vh; right: 5vw; transform: rotate(5deg); transform-origin: 20% 5%;}
-.rl{ top: 15.3vh;  transform: rotate(-4deg); right: -15vw; transform-origin: 60% 3%;}
-.sf{ top: 45.5vh; left: 23vw;}
-.sn{ top: 41.2vh; left: 53.6vw; transform: rotate(5deg); transform-origin: 5% 5%;}
-.sp{ top: 75.3vh; left: 74.2vw; transform: rotate(-5deg); transform-origin: 55% 5%;}
-.ss{ top: 78vh; left: 3.8vw; transform: rotate(3deg); transform-origin: 5% 5%;}
-.vf{ top: 84.5vh; left: 33.6vw;}
+.The_Adventure_of_the_Empty_House{ top: 8.7vh; left: 38.3vw; }
+.The_Final_Problem{ top: 4.3vh; left: 64.3vw; transform: rotate(10deg); transform-origin: top left;}
+.The_Hound_of_the_Baskervilles{ top: 30.7vh; right: 5vw; transform: rotate(5deg); transform-origin: 20% 5%;}
+.The_Red_Headed_League{ top: 15.3vh;  transform: rotate(-4deg); right: -15vw; transform-origin: 60% 3%;}
+.The_Sign_of_the_Four{ top: 45.5vh; left: 23vw;}
+.The_Adventure_of_the_Six_Napoleons{ top: 41.2vh; left: 53.6vw; transform: rotate(5deg); transform-origin: 5% 5%;}
+.The_Adventure_of_the_Speckled_Band{ top: 75.3vh; left: 74.2vw; transform: rotate(-5deg); transform-origin: 55% 5%;}
+.A_Study_in_Scarlet{ top: 78vh; left: 3.8vw; transform: rotate(3deg); transform-origin: 5% 5%;}
+.The_Valley_of_Fear{ top: 84.5vh; left: 33.6vw;}
 
 .notes{
     width: 15rem;
@@ -243,7 +292,7 @@ font-family: "Cinzel", serif;
     position: absolute;
     z-index: 1;
 }
-.card-title {
+.casename {
     position: absolute;
     bottom: -45px;
     left: 50%;

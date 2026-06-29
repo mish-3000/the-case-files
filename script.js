@@ -1,14 +1,14 @@
 var intro = document.querySelector(".intro");
 var introtext2 = document.querySelector(".introtext2");
 var introtext1 = document.querySelector(".introtext1");
-var god = document.querySelector(".god");
+var EvidenceBoard = document.querySelector(".EvidenceBoard");
 var carddiv = document.querySelectorAll(".card-div");
 var night = document.querySelector(".night");
 
 
 
 setTimeout(() => {night.style.display = "block"; }, 8050);
-setTimeout(() => {god.style.display = "block"; }, 6501);
+setTimeout(() => {EvidenceBoard.style.display = "block"; }, 6501);
 setTimeout(() => {cord.style.display = "block"; }, 8001);
 
 
@@ -25,32 +25,166 @@ for (let i = 0; i < arr.length; i++) {
 span.textContent=arr[i];
 introtext1.appendChild(span);
 
-     span.classList.add("flicker");
+span.classList.add("flicker");}
 
+   
+
+
+
+
+
+
+
+
+var CaseDataArr=[]
+var CaseCardDivArr=[]
+var CaseNameArr=["A Scandal in Bohemia", "The Adventure of the Empty House", "The Final Problem", "The Hound of the Baskervilles", "The Red Headed League", "The Sign of the Four", "The Adventure of the Six Napoleons", "The Adventure of the Speckled Band", "A Study in Scarlet", "The Valley of Fear"]
+var CaseClassArr=["A_Scandal_in_Bohemia", "The_Adventure_of_the_Empty_House", "The_Final_Problem", "The_Hound_of_the_Baskervilles", "The_Red_Headed_League", "The_Sign_of_the_Four", "The_Adventure_of_the_Six_Napoleons", "The_Adventure_of_the_Speckled_Band", "A_Study_in_Scarlet", "The_Valley_of_Fear"]
+var CaseImageArr=["assets/covers/A_Scandal_in_Bohemia.jpg", "assets/covers/Empty_House.jpg", "assets/covers/final_problem.jpg", "assets/covers/Hound_of_Baskervilles.jpg", "assets/covers/red_headed_league.jpg", "assets/covers/Sign_of_four.jpg", "assets/covers/Six_Napoleons.jpg", "assets/covers/Speckled_Band.jpg", "assets/covers/Study_in_Scarlet.jpg", "assets/covers/The_Valley_of_Fear.jpg"]
+var PushpinClassArr=["pushpin1", "pushpin2", "pushpin3", "pushpin4", "pushpin5", "pushpin6", "pushpin7", "pushpin8", "pushpin9", "pushpin10", "pushpin11"]
+for (let i = 0; i <10; i++) { 
+    let Div= document.createElement("div")
+
+Div.classList.add("card-div")
+Div.classList.add(CaseClassArr[i])
+EvidenceBoard.appendChild(Div)
+CaseCardDivArr.push(Div)
+let name= document.createElement("p")
+name.textContent=CaseNameArr[i]
+name.classList.add("casename")
+Div.appendChild(name)
+let image= document.createElement("img")
+image.setAttribute("src", CaseImageArr[i])
+image.classList.add("caseimg")
+Div.appendChild(image)
+let pushpin= document.createElement("img")
+pushpin.classList.add("pushpin")
+pushpin.classList.add(PushpinClassArr[i])
+pushpin.setAttribute("src", "https://freepngimg.com/save/webp/25041-pushpin-free-download")
+EvidenceBoard.appendChild(pushpin)
+let id=i
+let CaseData= {
+    "NAME": CaseNameArr[i],
+    "IMAGE": CaseImageArr[i],
+    "PUSHPIN_SRC": pushpin.getAttribute("src"),
+    "DIV": CaseCardDivArr[i],
+    "ID": i,
+    "PUSHPIN": pushpin
+} 
+CaseDataArr.push(CaseData)
 }
-const pushpin = document.querySelectorAll(".pushpin");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const svg = document.querySelector(".svgcanvas");
 
 
 
 
 const patharr = [];
-for (let i = 0; i < carddiv.length; i++) {
+for (let i = 0; i < CaseDataArr.length; i++) {
 let path= document.createElementNS("http://www.w3.org/2000/svg", "path");
 
 path.setAttribute("stroke", "rgb(128, 0, 0,1)");
 path.setAttribute("fill", "transparent");
 path.setAttribute("stroke-width", "3.6");
 patharr.push(path);
-svg.appendChild(path);
+svg.appendChild(path); 
 }
 
 
 const drawThreads = () => {
 const points = [];
-pushpin.forEach((pin) => {
-    let pinx = pin.getBoundingClientRect().x;
-    let piny = pin.getBoundingClientRect().y;
+CaseDataArr.forEach((caseData) => {
+    let pinx = caseData.PUSHPIN.getBoundingClientRect().x;
+    let piny = caseData.PUSHPIN.getBoundingClientRect().y;
 points.push({x: pinx, y: piny});
 
 });
@@ -95,7 +229,7 @@ if (points.length >= 10) {
         }, 9000);
     }
 
-   god.addEventListener("scroll", drawThreads);
+   EvidenceBoard.addEventListener("scroll", drawThreads);
 
 
 
@@ -105,16 +239,16 @@ const dim = document.querySelector(".darksheet");
 
 let cardclicked=0;
 
-carddiv.forEach((card) => {
-    card.addEventListener("click", () => {
+CaseDataArr.forEach((card) => {
+    card.DIV.addEventListener("click", () => {
     if (cardclicked===0) {
-   const rect = card.getBoundingClientRect();
-    card.style.top = `${rect.top}px`;
-    card.style.left = `${rect.left}px`;
-    card.style.right = "auto";
-    card.style.position = "fixed";
-    document.body.appendChild(card);
-    card.classList.add("cardclicked");
+   const rect = card.DIV.getBoundingClientRect();
+    card.DIV.style.top = `${rect.top}px`;
+    card.DIV.style.left = `${rect.left}px`;
+    card.DIV.style.right = "auto";
+    card.DIV.style.position = "fixed";
+    document.body.appendChild(card.DIV);
+    card.DIV.classList.add("cardclicked");
 
     dim.style.display = "block"; cardclicked=1;}
   
@@ -122,22 +256,22 @@ carddiv.forEach((card) => {
    
     });
 
-carddiv.forEach((card) => {
-    card.addEventListener("mouseover", () => {
+CaseDataArr.forEach((card) => {
+    card.DIV.addEventListener("mouseover", () => {
         if (cardclicked ===2) {
-            card.classList.add("scaledhover");
-            card.style.cursor = "pointer";
+            card.DIV.classList.add("scaledhover");
+            card.DIV.style.cursor = "pointer";
         } 
     });
-    card.addEventListener("mouseleave", () => {
+    card.DIV.addEventListener("mouseleave", () => {
         if (cardclicked ===2) {
-            card.classList.remove("scaledhover");
+            card.DIV.classList.remove("scaledhover");
         }
     });});
-    carddiv.forEach((card) => {
-        card.addEventListener("mouseover", () => {
+    CaseDataArr.forEach((card) => {
+        card.DIV.addEventListener("mouseover", () => {
         if (cardclicked === 1) {
-            card.style.cursor = "none";
+            card.DIV.style.cursor = "none";
         }
     });});
 
@@ -148,13 +282,13 @@ carddiv.forEach((card) => {
 
     dim.addEventListener("click", () => {
     if (cardclicked === 2) {
-carddiv.forEach((card) => {
-        card.classList.remove("cardclicked");
-         card.style.position = "absolute";
-         god.appendChild(card);
-         card.style.top = "";
-         card.style.left = "";
-         card.style.right = "";
+CaseDataArr.forEach((card) => {
+        card.DIV.classList.remove("cardclicked");
+         card.DIV.style.position = "absolute";
+         document.body.appendChild(card.DIV);
+         card.DIV.style.top = "";
+         card.DIV.style.left = "";
+         card.DIV.style.right = "";
         dim.style.display = "none";
         
         cardclicked=0;
@@ -935,8 +1069,8 @@ pageflipVF.loadFromHTML(book[9].querySelectorAll(".page, .cpage"));
 
 
 
-carddiv.forEach((card) => {
-    card.addEventListener("animationend", (e) => {
+CaseCardDivArr.forEach((card) => {
+    card.DIV.addEventListener("animationend", (e) => {
         if (e.animationName === "click") {cardclicked=2;
             
 }})})
@@ -953,14 +1087,14 @@ var exit = document.querySelector(".exit");
 let bookopenindex="";
 
 
-carddiv.forEach((card, index) => {
-card.addEventListener("click", () => {
+CaseCardDivArr.forEach((card, index) => {
+card.DIV.addEventListener("click", () => {
     if (cardclicked === 2) {
         
-        god.appendChild(card);
+        EvidenceBoard.appendChild(card);
         blacksheet.style.display = "block";
         
-        god.style.display = "none";
+        EvidenceBoard.style.display = "none";
         cord.style.display = "none";
         light.style.display = "none";
         bookopenindex=index;
@@ -1018,16 +1152,16 @@ light.addEventListener("animationend", (e) => {
    cross.addEventListener("click", () => {
         exit.style.display = "none";
         book[bookopenindex].style.top = "";
-        god.style.display = "block";
+        EvidenceBoard.style.display = "block";
         blacksheet.style.display = "none";
         cord.style.display = "block";
-       god.style.animation="none";
-       carddiv[bookopenindex].style.animation="";
-       carddiv[bookopenindex].classList.remove("cardclicked");
-      carddiv[bookopenindex].style.position = "absolute";
-      carddiv[bookopenindex].style.top = "";
-      carddiv[bookopenindex].style.left = "";
-      carddiv[bookopenindex].style.right = "";
+       EvidenceBoard.style.animation="none";
+       CaseCardDivArr[bookopenindex].DIV.style.animation="";
+       CaseCardDivArr[bookopenindex].classList.remove("cardclicked");
+      CaseCardDivArr[bookopenindex].DIV.style.position = "absolute";
+      CaseCardDivArr[bookopenindex].DIV.style.top = "";
+      CaseCardDivArr[bookopenindex].DIV.style.left = "";
+      CaseCardDivArr[bookopenindex].DIV.style.right = "";
       dim.style.display = "none";
        cardclicked=0;
        bookopenindex="";
