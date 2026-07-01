@@ -216,7 +216,7 @@ font-family: "Cinzel", serif;
 .pushpin{
     width: 5rem;
     height: 5rem;
-    position: absolute;
+    position: fixed;
     z-index: 7;
     pointer-events: none;
     filter: drop-shadow(6px 12px 5px rgba(10, 10, 10, 0.8));
@@ -280,7 +280,6 @@ font-family: "Cinzel", serif;
     right: -22vw;
     width: 6rem;
     height: 9rem;
-
 }
 .pushpin11{
     top: -20px;
@@ -297,7 +296,6 @@ font-family: "Cinzel", serif;
     bottom: -45px;
     left: 50%;
     transform: translateX(-50%);
-    
     font-size: 1.5rem;
     color: #f5f0e1;
     white-space: nowrap;
@@ -324,7 +322,7 @@ font-family: "Cinzel", serif;
     width: 13rem;
     height: 12rem;
 
-}
+} 
 .cardclicked{
     animation: click 0.5s linear 1 forwards;
     transform-origin: center !important;
@@ -445,19 +443,19 @@ font-family: "Cinzel", serif;
          100%{width: 6rem; height: 12rem;}
     }
 .night{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(16, 29, 104, 0.3);
+    background-color: rgba(30, 47, 147, 0.34);
     z-index: 10000;
     display: none;
     pointer-events: none;
     
 }
 .light{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
